@@ -1,7 +1,7 @@
 import org.example.AddNullException;
 import org.example.ItemNotFoundException;
-import org.example.StringList;
-import org.example.StringListImpl;
+import org.example.IntegerList;
+import org.example.IntegerListImpl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class StringListTest {
-    StringList stringList;
-
+    IntegerList stringList;
+/*
     @BeforeEach
     private void init(){
-        stringList = new StringListImpl(5);
+        stringList = new IntegerListImpl(5);
         stringList.add("Hi!");
         stringList.add("Hello!");
         stringList.add("WHATSUUUUP!");
@@ -72,7 +72,7 @@ public class StringListTest {
 
     @Test
     public void checkEquals(){
-        StringList otherList = new StringListImpl(10);
+        IntegerList otherList = new IntegerListImpl(10);
 
         otherList.add("Hi!");
         otherList.add("Hello!");
@@ -86,7 +86,7 @@ public class StringListTest {
 
     @Test
     public void checkIsEmpty(){
-        StringList otherList = new StringListImpl(12);
+        IntegerList otherList = new IntegerListImpl(12);
         assertEquals(true, otherList.isEmpty());
         otherList.add("Something");
         assertNotEquals(true,otherList.isEmpty());
@@ -102,6 +102,6 @@ public class StringListTest {
 
 
 
-
+*/
 
 }

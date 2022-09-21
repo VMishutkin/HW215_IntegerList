@@ -3,17 +3,17 @@ package org.example;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class StringListImpl implements StringList {
+public class IntegerListImpl implements IntegerList {
 
-    private String[] arr;
+    private Integer[] arr;
     private int size;
 
-    public StringListImpl(int size) {
-        this.arr = new String[size];
+    public IntegerListImpl(int size) {
+        this.arr = new Integer[size];
         size = 0;
     }
 
-    private void checkForNullInput(String item) {
+    private void checkForNullInput(Integer item) {
         if (item == null) {
             throw new AddNullException();
         }
@@ -27,7 +27,7 @@ public class StringListImpl implements StringList {
 
     private void extendArr() {
 
-        String[] newArr = new String[size * 2];
+        Integer[] newArr = new Integer[size * 2];
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
@@ -35,7 +35,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String add(String item) {
+    public Integer add(Integer item) {
         checkForNullInput(item);
         if (size == arr.length) {
             extendArr();
@@ -46,7 +46,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String add(int index, String item) {
+    public Integer add(int index, Integer item) {
         checkForNullInput(item);
         if(index>size){
             throw new IndexOutOfBoundsException();
@@ -65,7 +65,7 @@ public class StringListImpl implements StringList {
 
 
     @Override
-    public String set(int index, String item) {
+    public Integer set(int index, Integer item) {
         checkForNullInput(item);
         checkIndexInput(index);
         arr[index] = item;
@@ -73,7 +73,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String remove(String item) {
+    public Integer remove(Integer item) {
         checkForNullInput(item);
 
         for (int i = 0; i < size; i++) {
@@ -89,9 +89,9 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String remove(int index) {
+    public Integer remove(int index) {
         checkIndexInput(index);
-        String removed = arr[index];
+        Integer removed = arr[index];
         for (int i = index; i < size-1; i++) {
             arr[i] = arr[i + 1];
         }
@@ -101,7 +101,7 @@ public class StringListImpl implements StringList {
 
 
     @Override
-    public boolean contains(String item) {
+    public boolean contains(Integer item) {
         checkForNullInput(item);
         for (int i = 0; i < size; i++) {
             if (arr[i].equals(item)) {
@@ -112,7 +112,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public int indexOf(String item) {
+    public int indexOf(Integer item) {
         checkForNullInput(item);
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].equals(item)) {
@@ -124,7 +124,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public int lastIndexOf(String item) {
+    public int lastIndexOf(Integer item) {
         checkForNullInput(item);
         for (int i = arr.length - 1; i >= 0; i--) {
             if (arr[i].equals(item)) {
@@ -135,13 +135,13 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String get(int index) {
+    public Integer get(int index) {
         checkIndexInput(index);
         return arr[index];
     }
 
     @Override
-    public boolean equals(StringList otherList) {
+    public boolean equals(IntegerList otherList) {
         if (this == otherList) {
             return true;
         }
@@ -177,12 +177,12 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String[] toArray() {
-        String[] strings = new String[size];
-        for (int i = 0; i < strings.length; i++) {
-            strings[i] = arr[i];
+    public Integer[] toArray() {
+        Integer[] newArr = new Integer[size];
+        for (int i = 0; i < newArr.length; i++) {
+            newArr[i] = arr[i];
         }
-        return strings;
+        return newArr;
     }
 
     @Override
