@@ -37,6 +37,8 @@ public interface IntegerList {
     // элемент отсутствует в списке.
     Integer remove(int index);
 
+    IntegerList copyOf();
+
     // Проверка на существование элемента.
     // Вернуть true/false;
     boolean contains(Integer item);
@@ -57,10 +59,13 @@ public interface IntegerList {
     // количества элементов.
     Integer get(int index);
 
+
+
     // Сравнить текущий список с другим.
     // Вернуть true/false или исключение,
     // если передан null.
     boolean equals(IntegerList otherList);
+
 
     // Вернуть фактическое количество элементов.
     int size();
@@ -77,5 +82,13 @@ public interface IntegerList {
     // из строк в списке
     // и вернуть его.
     Integer[] toArray();
+
+    IntegerList isort();
+
+    IntegerList csort();
+
+    IntegerList qsort();
+
+    IntegerList addAll(IntegerList otherList);
 }
 
